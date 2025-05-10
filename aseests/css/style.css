@@ -1,0 +1,245 @@
+/* Updated CSS */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: #f8f9fa;
+  line-height: 1.6;
+  overflow-y: hidden; /* Prevent vertical scroll */
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 85px; /* Fixed header height */
+  z-index: 1000;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#nav_left .nav_link {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav_right .nav_list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav_right .nav_link {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav_right .nav_link:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+.nav_right .nav_link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.nav_right .nav_link:hover::after {
+  width: 100%;
+}
+
+/* Main Content Styles */
+.main {
+  margin-top: 85px; /* Match header height */
+  padding: 4rem 5%;
+  min-height: calc(100vh - 85px); /* Full viewport minus header */
+  display: flex;
+  align-items: center;
+}
+
+.first_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  height: 100%;
+}
+
+.first_section-left {
+  flex: 1;
+  animation: slideUp 1s ease;
+}
+
+.first_section-left div:first-child {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  color: #2d3748;
+}
+
+#krishnendu {
+  color: #4a5568;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#element {
+  font-size: 1.8rem;
+  color: #4a5568;
+  font-weight: 600;
+}
+
+.first_section-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#face_iamge {
+  max-width: 70%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto; /* Allow scrolling for mobile menu */
+  }
+
+  .main {
+    min-height: calc(100vh - 85px - 60px); /* Account for mobile menu */
+    padding: 2rem 5%;
+  }
+
+  .first_section {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .first_section-left div:first-child {
+    font-size: 2rem;
+  }
+
+  #element {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .first_section-left div:first-child {
+    font-size: 1.8rem;
+  }
+
+  #element {
+    font-size: 1.3rem;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Add these CSS modifications */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.nav_right.active {
+  display: flex !important;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav_right {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav_right .nav_list {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    text-align: center;
+    /* list-style: none; */
+  }
+
+  .nav_right .nav_item {
+    margin: 0;
+    width: 100%;
+    list-style: none;
+  }
+
+  .nav_right .nav_link {
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    color: white;
+  }
+
+  .nav_right .nav_link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+.nav_item {
+  list-style: none;
+}

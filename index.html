@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      maximum-scale="1.0,"
+      user-scalable="no"
+    />
+    <title>portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./aseests/css/style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <nav class="nav_container">
+        <div id="nav_left">
+          <ul class="nav_list">
+            <li class="nav_item">
+              <a href="#" class="nav_link">GHOSH </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav_right">
+          <ul class="nav_list">
+            <li class="nav_item">
+              <a href="#" class="nav_link">Home</a>
+            </li>
+            <li class="nav_item">
+              <a href="#" class="nav_link">About Me </a>
+            </li>
+            <li class="nav_item">
+              <a href="#" class="nav_link">projects</a>
+            </li>
+            <li class="nav_item">
+              <a href="#" class="nav_link">contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Add this button inside your nav_container -->
+        <button id="mobileMenuButton" class="mobile-menu-btn">
+          <i class="ri-menu-line"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div class="first_section">
+        <div class="first_section-left">
+          <!-- content about your self  -->
+          <div>
+            Hi! I'm <span id="krishnendu">Krishnendu</span>, a BCA student with
+            a strong passion for programming and technology.
+          </div>
+          <div id="element"></div>
+        </div>
+        <div class="first_section-right">
+          <!-- your image -->
+          <img src="./aseests/images/image.png" alt="" /id="face_iamge">
+        </div>
+      </div>
+    </main>
+
+    <script src="./aseests/js/script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "I am a Web Developer",
+          "I am a UI/UX Designer",
+          "I am a App Developer",
+          "I am aTech Enthusiast",
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
+        showCursor: false,
+      });
+    </script>
+  </body>
+</html>
